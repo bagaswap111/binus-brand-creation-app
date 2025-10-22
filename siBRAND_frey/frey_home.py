@@ -11,4 +11,6 @@ def run():
 
     **Lengkapi profil usaha Anda untuk memulai.**
     """)
-    st.button("Lengkapi Profil Usaha")
+    if st.button("➡️ Lengkapi Profil Usaha"):
+        st.session_state.page = "Profil Usaha"
+        st.rerun()
