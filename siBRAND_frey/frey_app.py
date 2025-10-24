@@ -45,11 +45,10 @@ elif st.session_state.page == "Buat Strategi Branding":
     frey_detail_produk.run()
 elif st.session_state.page == "Memory":
     frey_memory.run()
-elif st.session_state.page == "Logout":
-    st.warning("Anda telah keluar dari aplikasi.")
 elif selected == "Karakter Merk":
     frey_karakter_merk.run()
 elif selected == "Hasil Strategi":
     frey_hasil_strategi.run()
-elif selected == "Logout":
-    st.write("Anda telah keluar dari aplikasi.")
+elif st.session_state.page == "Logout":
+    st.warning("Anda telah keluar dari aplikasi.")
+
