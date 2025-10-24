@@ -20,6 +20,7 @@ with st.sidebar:
     selected = option_menu(
         "SiBRAND - Strategi Branding untuk UMKM",
         menu_items,
+        ["Beranda", "Profil Usaha", "Buat Strategi Branding", "Karakter Merk", "Hasil Strategi", "Logout"],
         icons=["house", "building", "lightbulb", "box-arrow-right"],
         menu_icon="app-indicator",
         default_index=menu_items.index(st.session_state.page),
@@ -46,3 +47,9 @@ elif st.session_state.page == "Memory":
     frey_memory.run()
 elif st.session_state.page == "Logout":
     st.warning("Anda telah keluar dari aplikasi.")
+elif selected == "Karakter Merk":
+    frey_karakter_merk.run()
+elif selected == "Hasil Strategi":
+    frey_hasil_strategi.run()
+elif selected == "Logout":
+    st.write("Anda telah keluar dari aplikasi.")
