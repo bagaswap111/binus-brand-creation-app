@@ -1,5 +1,9 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import pickle
+from pathlib import Path
+import streamlit_authenticator as stauth
+
 import frey_home
 import frey_profil_usaha
 import frey_detail_produk
@@ -7,33 +11,52 @@ import frey_karakter_merk
 import frey_hasil_strategi
 import frey_memory
 
-import pickle
-from pathlib import Path
+# -----------------------------------------
+# 1. SET PAGE CONFIG harus paling atas !!!
+# -----------------------------------------
+st.set_page_config(page_title="SiBRAND - Strategi Branding untuk UMKM", layout="wide")
 
-import streamlit_authenticator as stauth
 
-
-names = ["Jojo Mabar", "Regina Sedih"]
-usernames = ["jmabar", "rsed"]
+# -----------------------------------------
+# 2. Load credentials
+# -----------------------------------------
 
 file_path = Path(__file__).parent / "hashed_pw.pkl"
 with file_path.open("rb") as file:
     hashed_passwords = pickle.load(file)
 
-authenticator = stauth.Authenticate(names, usernames, hashed_passwords, "ini cookie biar ga login lagi", "abcdef", cookie_expiry_days=30)
 
-name, authentication_status, username = authenticator.login("Login", "main")
+authenticator = stauth.Authenticate(credentials=hashed_passwords,
+                                    cookie_name="ini cookie biar ga login lagi", 
+                                    key="abcdef", 
+                                    cookie_expiry_days=30)
 
-if authentication_status == False:
+# -----------------------------------------
+# 3. LOGIN FORM (di area paling atas UI)
+# -----------------------------------------
+authenticator.login(
+    location="main",
+        fields={
+        "Form name": "Login",
+        "Username": "Username",
+        "Password": "Password",
+        "Login": "Login"
+    }
+)
+
+authentication_status = st.session_state["authentication_status"]
+
+# -----------------------------------------
+# 4. Handle login states
+# -----------------------------------------
+if authentication_status is False:
     st.error("Username/password is incorrect")
 
-if authentication_status == None:
+elif authentication_status is None:
     st.error("Please enter your username and password")
 
-if authentication_status:
+elif authentication_status:
 
-
-    st.set_page_config(page_title="SiBRAND - Strategi Branding untuk UMKM", layout="wide")
 
     # --- 1️⃣ Inisialisasi halaman default ---
     if "page" not in st.session_state:
