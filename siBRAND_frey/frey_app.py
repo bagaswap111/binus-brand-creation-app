@@ -56,8 +56,6 @@ elif authentication_status is None:
     st.error("Please enter your username and password")
 
 elif authentication_status:
-
-
     # --- 1️⃣ Inisialisasi halaman default ---
     if "page" not in st.session_state:
         st.session_state.page = "Beranda"
@@ -99,4 +97,3 @@ elif authentication_status:
         frey_hasil_strategi.run()
     elif st.session_state.page == "Logout":
         st.warning("Anda telah keluar dari aplikasi.")
-
