@@ -1,6 +1,7 @@
 import streamlit as st
 from session_storage import save_form_data_to_session, collect_all_form_data
 from ai_integration import generate_branding_strategy
+from streamlit_scroll_to_top import scroll_to_here
 
 def run():
     st.header("Karakter Merk dan Gaya Komunikasi")
@@ -137,3 +138,30 @@ def run():
         st.write("Current karakter_merk in session:", st.session_state.get('karakter_merk', {}))
         st.write("Current detail_produk in session:", st.session_state.get('detail_produk', {}))
         st.write("Current profil_usaha in session:", st.session_state.get('profil_usaha', {}))
+
+
+    # # --- 5️⃣ Footer dengan Tombol Scroll Manual ---
+    # st.markdown("---")
+    # # Buat HTML button langsung (tidak pakai st.button)
+    # col_left, col_center, col_right = st.columns([1, 2, 1])
+
+    # with col_center:
+    #     if 'scroll_to_top' not in st.session_state:
+    #         st.session_state.scroll_to_top = False
+
+    #     if st.session_state.scroll_to_top:
+    #         scroll_to_here(100, key='top')  # Scroll to the top of the page
+    #         st.session_state.scroll_to_top = False  # Reset the state after scrolling
+
+    #     def scroll():
+    #         st.session_state.scroll_to_top = True
+
+    #     st.button(
+    #         "⬆️ **SCROLL KE ATAS**", 
+    #         use_container_width=True,
+    #         type="primary",
+    #         on_click=scroll,
+    #         key="scroll_to_top_btn",
+    #         help="Klik untuk kembali ke bagian atas halaman",
+    #     )
+    #         st.toast("✅ Scroll ke atas!", icon="⬆️")

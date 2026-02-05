@@ -66,11 +66,13 @@ Buatkan strategi branding yang komprehensif untuk usaha berikut:
 Buat strategi branding yang mencakup:
 1. **Karakter Brand** - deskripsikan persona brand
 2. **Elemen Visual** - rekomendasi warna, typography, style  
-3. **Gaya Komunikasi** - tone of voice, cara berinteraksi
+3. **Gaya Komunikasi** - tone of voice, cara berinteraksi. Jelaskan setiap poin dengan detail!
 4. **Strategi Konten** - ide konten untuk media sosial
 5. **Hubungan dengan Pelanggan** - cara membangun loyalitas
 
 Berikan dalam format yang mudah dipahami dan actionable untuk UMKM.
+Jabarkan secara lengkap dan komprehensif pada setiap poin yang diberikan!
+Khusus nomor 3, 4, dan 5, berikan penjelasan yang lebih dalam dan bervariatif!
 """
     return prompt
 
