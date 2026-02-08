@@ -12,7 +12,8 @@ def run():
     existing_data = st.session_state.detail_produk
 
     jenis_options = ["Kafe / restoran", "Frozen Food / Makanan Siap Saji", "Street Food", "Makanan Kekinian",
-         "Makanan Tradisional", "Roti & Pastry", "Katering", "Lainnya"]
+         "Makanan Tradisional", "Roti & Pastry", "Katering",
+          "Retail", "Grosir", "Fashion brand", "Penjahit", "Thrift (baju bekas)", "Lainnya"]
     
     jenis = st.multiselect(
         "Jenis Produk/Usaha",

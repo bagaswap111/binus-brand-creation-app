@@ -72,7 +72,7 @@ Buat strategi branding yang mencakup:
 
 Berikan dalam format yang mudah dipahami dan actionable untuk UMKM.
 Jabarkan secara lengkap dan komprehensif pada setiap poin yang diberikan!
-Khusus nomor 3, 4, dan 5, berikan penjelasan yang lebih dalam dan bervariatif!
+Khusus nomor 3, 4, dan 5, berikan penjelasan yang lebih dalam dan bervariatif, jelaskan secara naratif!
 """
     return prompt
 
